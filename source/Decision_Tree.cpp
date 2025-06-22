@@ -20,7 +20,6 @@ This Model Will Support Only string values and gives the rootnode and child node
 
 using namespace std;
 
-void gotoxy(int,int);
 int main()
 {
 	int c,r,s;

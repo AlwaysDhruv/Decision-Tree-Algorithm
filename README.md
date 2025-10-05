@@ -1,4 +1,4 @@
-# Decision Tree Classifier
+# Decision Tree Algorithm
 
 This project is a C++ implementation of a Decision Tree classifier. A decision tree is a supervised learning algorithm used for classification and regression tasks. It works by splitting the dataset into smaller subsets based on feature values, forming a tree structure with decision nodes and leaf nodes.
 

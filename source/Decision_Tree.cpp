@@ -105,14 +105,8 @@ int main()
                 if (svalue2[cct][i]==str)
                 {
                     ++ct;
-                    if (cls3[cct][i]==1)
-                    {
-                        ++y1;
-                    }
-                    else if (cls3[cct][i]==0)
-                    {
-                        ++n1;
-                    }
+                    if (cls3[cct][i]==1) ++y1;
+                    else if (cls3[cct][i]==0) ++n1;
                 }
                 else if (svalue2[cct][i]!=str)
                 {
@@ -136,18 +130,9 @@ int main()
             }
             if (ct==r)
             {
-                if (y1==0||n1==0)
-                {
-                    entropy2.push_back(0);
-                }
-                else
-                {
-                    entropy2.push_back(((y1+n1) / r) * ((-(y1/(y1+n1)) * log2((y1/(y1+n1)))) + (-(n1/(y1+n1)) * log2((n1/(y1+n1))))));
-                }
-                for (int i = 0; i < entropy2.size(); ++i)
-                {
-                    entropy += (+entropy2[i]);
-                }
+                if (y1==0||n1==0) entropy2.push_back(0);
+                else entropy2.push_back(((y1+n1) / r) * ((-(y1/(y1+n1)) * log2((y1/(y1+n1)))) + (-(n1/(y1+n1)) * log2((n1/(y1+n1))))));
+                for (int i = 0; i < entropy2.size(); ++i) entropy += (+entropy2[i]);
                 e = y / r;
                 e1 = n / r;
                 entire = ((-e * log2(e)) + (-e1 * log2(e1)));

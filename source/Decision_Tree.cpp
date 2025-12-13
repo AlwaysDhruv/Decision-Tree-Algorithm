@@ -251,13 +251,9 @@ int main()
             if (y1==0||n1==0) entropy2.push_back(0);
             else entropy2.push_back(((y1+n1) / ct) * ((-(y1/(y1+n1)) * log2((y1/(y1+n1)))) + (-(n1/(y1+n1)) * log2((n1/(y1+n1))))));            
             for (int i = 0; i < entropy2.size(); ++i)
-            {
                 if (entropy2[i]==1) entropy2[i] = 0;
-            }
             for (int i = 0; i < entropy2.size(); ++i)
-            {
                 entropy += (+entropy2[i]);
-            }
             e = y / (y + n);
             e1 = n / (y + n);
             entire = ((-e * log2(e)) + (-e1 * log2(e1)));
@@ -288,21 +284,13 @@ int main()
         }
         sort(ans.begin(),ans.end());
         int fg = 0;
-        if (ans.back()==0)
-        {
-            ans3.push_back(0.9123);
-        }
-        else
-        {
-            for (int i = 1; i < ans2.size() && ans.size(); ++i)
+        if (ans.back()==0) ans3.push_back(0.9123);
+        else for (int i = 1; i < ans2.size() && ans.size(); ++i)
+            if (ans2[i]==ans.back())
             {
-                if (ans2[i]==ans.back())
-                {
-                    ans3.push_back(i + 1);
-                    break;
-                }
+                ans3.push_back(i + 1);
+                break;
             }
-        }
         y = 0;
         n = 0;
         e = 0;
@@ -365,31 +353,14 @@ int main()
             for (int i = 0; i < stri4.size(); ++i)
             {
                 for (int j = 0; j < stri3.size(); ++j)
-                {
                     if (stri4[i]==stri3[j])
                     {
-                        if (cls4[j]==1)
-                        {
-                            ++y;
-                        }
-                        else if (cls4[j]==0)
-                        {
-                            ++n;
-                        }
+                        if (cls4[j]==1) ++y;
+                        else if (cls4[j]==0) ++n;
                     }
-                }
-                if (y > n)
-                {
-                    stri5.push_back("Yes");
-                }
-                else if (y < n)
-                {
-                    stri5.push_back("No");
-                }
-                else if (y==n)
-                {
-                    stri5.push_back("Yes");
-                }
+                if (y > n) stri5.push_back("Yes");
+                else if (y < n) stri5.push_back("No");
+                else if (y==n) stri5.push_back("Yes");
                 y = 0;
                 n = 0;
             }
@@ -418,14 +389,8 @@ int main()
     cout << endl;
     for (int i = 0; i < stri.size(); ++i)
     {
-        if (ans3[i]==0.9123)
-        {
-            cout << stri[i] << " For Yes " << endl; 
-        }
-        else
-        {
-            cout << stri[i] << " For " << (ans3[i] + 1) << " Column" << endl;   
-        }
+        if (ans3[i]==0.9123) cout << stri[i] << " For Yes " << endl; 
+        else cout << stri[i] << " For " << (ans3[i] + 1) << " Column" << endl;   
     }
     cout << endl;
     cout << endl;
@@ -433,9 +398,6 @@ int main()
     cout << "Child Node" << endl;
     cout << "--------------------------";
     cout << endl;
-    for (int i = 0; i < stri5.size(); ++i)
-    {
-        cout << stri6[i] << " For " << stri5[i] << endl;
-    }
+    for (int i = 0; i < stri5.size(); ++i) cout << stri6[i] << " For " << stri5[i] << endl;
     return 0;
 }

@@ -77,18 +77,12 @@ int main()
                         cls.clear();
                         ct = 0;
                         ++cct;
-                        if (cct==s)
-                        {
-                            break;
-                        }
+                        if (cct==s) break;
                     }
                 }
                 ++f;
             }
-            if (cct==s)
-            {
-                break;
-            }
+            if (cct==s) break;
         }
     }   
     vector<double> ans;

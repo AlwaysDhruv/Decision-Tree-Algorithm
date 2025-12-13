@@ -149,21 +149,13 @@ int main()
                     str = svalue2[cct][0];          
                 }
             }
-            if (cct==s)
-            {
-                break;
-            }
+            if (cct==s) break;
         }
     }
     int l;
     sort(ans.begin(),ans.end());
     for (int i = 0; i < ans2.size(); ++i)
-    {
-        if (ans2[i]==ans.back())
-        {
-            l = i;
-        }
-    }
+        if (ans2[i]==ans.back()) l = i;
     if (l!=0)
     {
         for (int i = 0; i < r; ++i)
@@ -215,26 +207,14 @@ int main()
                     svalue3.push_back(svalue[i][j]);
                     svalue4.push_back(svalue[i][j]);
                     cls4.push_back(clss[j]);
-                    if (clss[j]==1)
-                    {
-                        ++y;
-                    }
-                    else if (clss[j]==0)
-                    {
-                        ++n;
-                    }
+                    if (clss[j]==1) ++y;
+                    else if (clss[j]==0) ++n;
                 }
             }
             sort(svalue4.begin(),svalue4.end());
             for (int i = 0; i < svalue3.size(); ++i)
             {   
-                for (int j = 0; j < svalue3.size(); ++j)
-                {
-                    if (svalue4[ct]==svalue3[j])
-                    {
-                        cls5.push_back(cls4[j]);
-                    }
-                }
+                for (int j = 0; j < svalue3.size(); ++j) if (svalue4[ct]==svalue3[j]) cls5.push_back(cls4[j]);
             }
             string str = svalue4.front();
             for (int i = 0; i < svalue4.size(); ++i)
@@ -242,14 +222,8 @@ int main()
                 if (str==svalue4[i])
                 {
                     ++ct;
-                    if (cls5[i]==1)
-                    {
-                        ++y1;
-                    }
-                    else if (cls5[i]==0)
-                    {               
-                        ++n1;
-                    }
+                    if (cls5[i]==1) ++y1;
+                    else if (cls5[i]==0) ++n1;
                 }
                 else
                 {
@@ -274,20 +248,11 @@ int main()
                     }               
                 }
             }
-            if (y1==0||n1==0)
-            {
-                entropy2.push_back(0);
-            }
-            else
-            {
-                entropy2.push_back(((y1+n1) / ct) * ((-(y1/(y1+n1)) * log2((y1/(y1+n1)))) + (-(n1/(y1+n1)) * log2((n1/(y1+n1))))));
-            }               
+            if (y1==0||n1==0) entropy2.push_back(0);
+            else entropy2.push_back(((y1+n1) / ct) * ((-(y1/(y1+n1)) * log2((y1/(y1+n1)))) + (-(n1/(y1+n1)) * log2((n1/(y1+n1))))));            
             for (int i = 0; i < entropy2.size(); ++i)
             {
-                if (entropy2[i]==1)
-                {   
-                    entropy2[i] = 0;
-                }
+                if (entropy2[i]==1) entropy2[i] = 0;
             }
             for (int i = 0; i < entropy2.size(); ++i)
             {

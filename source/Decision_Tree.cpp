@@ -11,7 +11,7 @@ This Model Will Support Only string values and gives the rootnode and child node
 */
 
 
-#include<iostream>
+#include<iostreamhttps://github.com/AlwaysDhruv/Decision-Tree-Algorithm.git>
 #include<vector>
 #include<string>
 #include<algorithm>
@@ -51,22 +51,13 @@ int main()
     {
         cout << "Enter " << i + 1 << " Class Value :- ";
         cin >> clss[i];
-        if (clss[i]==1)
-        {
-            ++y;
-        }
-        else if (clss[i]==0)
-        {
-            ++n;
-        }
+        if (clss[i]==1) ++y;
+        else if (clss[i]==0) ++n;
     }
     int ct = 0,cct = 0,f = 0;
     if(s!=0)
     {
-        for (int i = 0; i < s ; ++i)
-        {
-            sort(svalue2[i].begin(),svalue2[i].end());
-        }
+        for (int i = 0; i < s ; ++i) sort(svalue2[i].begin(),svalue2[i].end());
         cct = 0;
         ct = 0;
         f = 0;
